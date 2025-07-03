@@ -1,0 +1,24 @@
+<mat-card>
+<div class="section" 
+     [ngClass]="{ 'dark-theme': isDarkTheme }">
+  <h2>Student List</h2>
+<div class="student-grid">
+  <mat-card class="student-card" *ngFor="let student of filteredStudents" (click)="openDetails(student)">
+    <mat-card-header>
+      <div mat-card-avatar class="student-avatar">
+        <img [src]="student.photoUrl" alt="{{ student.name }}" />
+      </div>
+      <mat-card-title>{{ student.name }}</mat-card-title>
+      <mat-card-subtitle>{{ student.rollNumber }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ student.stream }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+</div>
+<!-- if needed -->
+<div class="average">
+  <p>Average Marks (Filtered): <strong>{{ average }}%</strong></p>
+</div>
+</mat-card>

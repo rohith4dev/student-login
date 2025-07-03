@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>{{ isRegistering ? 'Register' : 'Login' }}</h2>
+<div mat-dialog-content>
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Password</mat-label>
+    <input matInput type="password" />
+  </mat-form-field>
+
+  <ng-container *ngIf="isRegistering">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Confirm Password</mat-label>
+      <input matInput type="password" />
+    </mat-form-field>
+  </ng-container>
+</div>
+
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="toggleMode()">
+    {{ isRegistering ? 'Already have an account?' : 'New? Register' }}
+  </button>
+  <button mat-flat-button color="primary" (click)="isRegistering ? register() : login()">
+    {{ isRegistering ? 'Register' : 'Login' }}
+  </button>
+</div>
+   

@@ -1,0 +1,16 @@
+<div class="navbar">
+  <div class="logo" (click)="redirectToCollege()">
+    <img src="assets/logo.png" alt="GCET Logo" width="40" height="40" />
+    <span>Geethanjali College of Engineering & Technology</span>
+  </div>
+
+  <input
+    matInput
+    type="text"
+    placeholder="Search by name or roll number..."
+    [(ngModel)]="searchTerm"
+    (input)="onSearchChange()"
+  />
+
+  <button mat-raised-button color="primary" (click)="openLoginModal()">Login</button>
+</div>

@@ -1,0 +1,34 @@
+ <mat-card class="student-details-card">
+  <mat-card-header>
+    <mat-card-title>{{ student.name }}</mat-card-title>
+    <mat-card-subtitle>{{ student.rollNumber }} - {{ student.stream }}</mat-card-subtitle>
+  </mat-card-header>
+  </mat-card>
+ <!-- working -->
+ <div class="student-details">
+<img [src]="student.photoUrl" alt="Student Photo" width="100" />
+<p><strong>Roll:</strong> {{ student.rollNumber }}</p>
+<p><strong>Stream:</strong> {{ student.stream }}</p>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sub of student.subjects">
+      <!-- <td>{{ sub.name }}</td> -->
+      <td>{{ sub.marks }}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p><strong>Average:</strong> {{ average }}</p>
+
+<div class="close-button" (click)="close()">
+  <mat-icon>close</mat-icon>
+</div>
+
+<!-- <button mat-button mat-dialog-close mat color="primary">Close</button> -->

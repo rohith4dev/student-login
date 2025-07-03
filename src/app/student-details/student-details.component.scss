@@ -1,0 +1,26 @@
+:host {
+  display: block;
+}
+.example-card {
+  max-width: 400px;
+}
+
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  cursor: pointer;
+  color: #777;
+  font-size: 24px;
+}
+
+.close-button:hover {
+  color: #000;
+}
